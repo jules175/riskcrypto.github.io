@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RiskCrypto — Analysez le risque et le potentiel des cryptomonnaies en un coup d'œil. Scores intelligents, watchlist, apprentissage." />
+  <meta name="description" content="RiskCrypto — Scores de risque et de potentiel, 30 leçons crypto, portfolio, alertes et actualités. Gratuit sur l'App Store." />
   <meta property="og:title" content="RiskCrypto — Investis plus intelligemment" />
-  <meta property="og:description" content="Scores de risque et potentiel pour les 50 cryptos les plus importantes. Gratuit sur l'App Store." />
+  <meta property="og:description" content="Scores de risque et potentiel pour les 50 cryptos les plus importantes. 30 leçons progressives. Gratuit sur l'App Store." />
   <meta property="og:type" content="website" />
   <title>RiskCrypto — Investis plus intelligemment</title>
   <style>
@@ -24,6 +24,7 @@
       --red:    #FF3D5A;
       --purple: #818CF8;
       --blue:   #60A5FA;
+      --gold:   #FFD700;
     }
 
     html { scroll-behavior: smooth; }
@@ -61,266 +62,176 @@
     }
 
     .nav-icon {
-      width: 34px;
-      height: 34px;
+      width: 34px; height: 34px;
       border-radius: 10px;
       background: rgba(0,232,198,0.15);
       border: 1.5px solid rgba(0,232,198,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       font-size: 17px;
     }
 
-    .nav-name {
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--t1);
-      letter-spacing: -0.3px;
-    }
+    .nav-name { font-size: 17px; font-weight: 800; color: var(--t1); letter-spacing: -0.3px; }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
 
     .nav-link {
-      color: var(--t3);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 8px;
+      color: var(--t3); text-decoration: none;
+      font-size: 14px; font-weight: 600;
+      padding: 6px 12px; border-radius: 8px;
       transition: color 0.15s, background 0.15s;
     }
-
     .nav-link:hover { color: var(--t1); background: rgba(255,255,255,0.06); }
 
     .nav-cta {
-      background: var(--teal);
-      color: #000 !important;
-      font-weight: 800;
-      border-radius: 10px;
-      padding: 8px 16px;
-      font-size: 13px;
+      background: var(--teal); color: #000 !important;
+      font-weight: 800; border-radius: 10px;
+      padding: 8px 16px; font-size: 13px;
       transition: opacity 0.15s;
     }
-
     .nav-cta:hover { opacity: 0.85; background: var(--teal) !important; }
 
     /* ── HERO ── */
     .hero {
       text-align: center;
       padding: 80px 24px 60px;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
 
     .hero::before {
       content: "";
-      position: absolute;
-      top: -60px;
-      left: 50%;
+      position: absolute; top: -60px; left: 50%;
       transform: translateX(-50%);
-      width: 600px;
-      height: 600px;
+      width: 600px; height: 600px;
       background: radial-gradient(circle, rgba(0,232,198,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      display: inline-flex; align-items: center; gap: 6px;
       background: rgba(0,232,198,0.1);
       border: 1px solid rgba(0,232,198,0.25);
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--teal);
-      letter-spacing: 0.5px;
+      border-radius: 20px; padding: 6px 14px;
+      font-size: 12px; font-weight: 700;
+      color: var(--teal); letter-spacing: 0.5px;
       margin-bottom: 24px;
     }
 
     h1 {
       font-size: clamp(32px, 7vw, 56px);
-      font-weight: 900;
-      color: var(--t1);
-      letter-spacing: -1.5px;
-      line-height: 1.1;
+      font-weight: 900; color: var(--t1);
+      letter-spacing: -1.5px; line-height: 1.1;
       margin-bottom: 20px;
     }
-
     h1 span { color: var(--teal); }
 
     .hero-sub {
       font-size: clamp(15px, 2.5vw, 18px);
-      color: var(--t2);
-      max-width: 520px;
-      margin: 0 auto 36px;
-      line-height: 1.65;
+      color: var(--t2); max-width: 540px;
+      margin: 0 auto 36px; line-height: 1.65;
     }
 
     .hero-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 56px;
+      display: flex; gap: 12px; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 56px;
     }
 
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--teal);
-      color: #000;
-      font-weight: 800;
-      font-size: 15px;
-      padding: 14px 28px;
-      border-radius: 14px;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal); color: #000;
+      font-weight: 800; font-size: 15px;
+      padding: 14px 28px; border-radius: 14px;
       text-decoration: none;
       transition: opacity 0.15s, transform 0.15s;
     }
-
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
 
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--card);
-      color: var(--t1);
-      font-weight: 700;
-      font-size: 15px;
-      padding: 14px 28px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--card); color: var(--t1);
+      font-weight: 700; font-size: 15px;
+      padding: 14px 28px; border-radius: 14px;
+      border: 1px solid var(--border); text-decoration: none;
       transition: background 0.15s, transform 0.15s;
     }
-
     .btn-secondary:hover { background: var(--card2); transform: translateY(-1px); }
+
+    .btn-premium {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #3d2a00, #1a1206);
+      color: var(--gold);
+      font-weight: 800; font-size: 15px;
+      padding: 14px 28px; border-radius: 14px;
+      border: 1.5px solid rgba(255,215,0,0.4); text-decoration: none;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .btn-premium:hover { opacity: 0.88; transform: translateY(-1px); }
 
     /* ── MOCKUP ── */
     .mockup-wrap {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
+      display: flex; justify-content: center;
+      gap: 14px; flex-wrap: wrap; margin-bottom: 20px;
     }
 
     .phone-card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 16px;
-      width: 180px;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
+      border-radius: 22px; padding: 16px;
+      width: 172px; text-align: left;
+      position: relative; overflow: hidden;
     }
 
     .phone-card::before {
       content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      border-radius: 22px 22px 0 0;
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; border-radius: 22px 22px 0 0;
     }
-
     .phone-card.teal::before  { background: var(--teal); }
     .phone-card.amber::before { background: var(--amber); }
-    .phone-card.red::before   { background: var(--red); }
     .phone-card.purple::before{ background: var(--purple); }
+    .phone-card.gold::before  { background: var(--gold); }
+    .phone-card.blue::before  { background: var(--blue); }
 
-    .phone-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--t3);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .phone-crypto-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .phone-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
-
+    .phone-label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: var(--t3); text-transform: uppercase; margin-bottom: 8px; }
     .phone-sym { font-size: 13px; font-weight: 800; color: var(--t1); }
     .phone-name { font-size: 10px; color: var(--t3); }
     .phone-price { font-size: 12px; font-weight: 700; color: var(--t1); margin-bottom: 2px; }
-
     .phone-change-pos { font-size: 11px; font-weight: 700; color: var(--teal); }
     .phone-change-neg { font-size: 11px; font-weight: 700; color: var(--red); }
-
-    .score-mini {
-      display: flex;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .score-pill {
-      flex: 1;
-      border-radius: 6px;
-      padding: 4px 0;
-      text-align: center;
-      font-size: 10px;
-      font-weight: 800;
-    }
-
+    .score-mini { display: flex; gap: 6px; margin-top: 6px; }
+    .score-pill { flex: 1; border-radius: 6px; padding: 4px 0; text-align: center; font-size: 10px; font-weight: 800; }
     .bar-wrap { height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; margin-top: 6px; overflow: hidden; }
     .bar-fill { height: 100%; border-radius: 2px; }
 
-    /* ── SECTION COMMUNE ── */
+    /* ── STATS BAND ── */
+    .stats-band {
+      display: flex; justify-content: center; gap: 40px;
+      flex-wrap: wrap; padding: 28px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 900; color: var(--teal); letter-spacing: -1px; }
+    .stat-lbl { font-size: 12px; color: var(--t3); font-weight: 600; margin-top: 2px; }
+
+    /* ── SECTIONS ── */
     section { padding: 72px 24px; }
     .section-inner { max-width: 960px; margin: 0 auto; }
 
     .section-label {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      color: var(--teal);
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      text-align: center;
+      font-size: 11px; font-weight: 800; letter-spacing: 1.2px;
+      color: var(--teal); text-transform: uppercase;
+      margin-bottom: 10px; text-align: center;
     }
 
     h2 {
-      font-size: clamp(24px, 4vw, 36px);
-      font-weight: 900;
-      color: var(--t1);
-      letter-spacing: -0.8px;
-      line-height: 1.2;
-      margin-bottom: 14px;
-      text-align: center;
+      font-size: clamp(24px, 4vw, 36px); font-weight: 900;
+      color: var(--t1); letter-spacing: -0.8px; line-height: 1.2;
+      margin-bottom: 14px; text-align: center;
     }
 
     .section-sub {
-      font-size: 15px;
-      color: var(--t2);
-      text-align: center;
-      max-width: 560px;
-      margin: 0 auto 48px;
-      line-height: 1.7;
+      font-size: 15px; color: var(--t2); text-align: center;
+      max-width: 560px; margin: 0 auto 48px; line-height: 1.7;
     }
 
     /* ── FEATURES GRID ── */
@@ -331,100 +242,125 @@
     }
 
     .feature-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 24px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 18px; padding: 24px;
       transition: border-color 0.2s, transform 0.2s;
     }
-
     .feature-card:hover { border-color: rgba(0,232,198,0.25); transform: translateY(-2px); }
-
-    .feature-icon {
-      font-size: 28px;
-      margin-bottom: 14px;
+    .feature-icon { font-size: 28px; margin-bottom: 14px; }
+    .feature-title { font-size: 16px; font-weight: 800; color: var(--t1); margin-bottom: 8px; }
+    .feature-desc { font-size: 13px; color: var(--t3); line-height: 1.65; }
+    .feature-badge {
+      display: inline-block; margin-top: 10px;
+      font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px;
     }
+    .badge-new { background: rgba(0,232,198,0.12); color: var(--teal); }
+    .badge-premium { background: rgba(255,215,0,0.1); color: var(--gold); }
 
-    .feature-title {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--t1);
-      margin-bottom: 8px;
-    }
-
-    .feature-desc {
-      font-size: 13px;
-      color: var(--t3);
-      line-height: 1.65;
-    }
-
-    /* ── ONGLETS ── */
+    /* ── TABS ── */
     .tabs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 10px;
     }
 
     .tab-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 16px;
-      text-align: center;
-      transition: border-color 0.2s;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px 14px; text-align: center;
+      transition: border-color 0.2s, transform 0.15s;
     }
-
-    .tab-card:hover { border-color: rgba(0,232,198,0.2); }
+    .tab-card:hover { border-color: rgba(0,232,198,0.2); transform: translateY(-2px); }
     .tab-emoji { font-size: 24px; margin-bottom: 8px; }
     .tab-name { font-size: 13px; font-weight: 800; color: var(--t1); margin-bottom: 4px; }
     .tab-desc { font-size: 11px; color: var(--t3); line-height: 1.5; }
 
-    /* ── SCORES EXPLAINER ── */
+    /* ── SCORES ── */
     .scores-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 32px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px; margin-top: 32px;
     }
 
-    .score-card {
-      border-radius: 16px;
-      padding: 22px;
-      border: 1px solid;
-    }
-
-    .score-card.risk {
-      background: rgba(255,61,90,0.05);
-      border-color: rgba(255,61,90,0.2);
-    }
-
-    .score-card.pot {
-      background: rgba(0,232,198,0.05);
-      border-color: rgba(0,232,198,0.2);
-    }
-
-    .score-card-title {
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
+    .score-card { border-radius: 16px; padding: 22px; border: 1px solid; }
+    .score-card.risk { background: rgba(255,61,90,0.05); border-color: rgba(255,61,90,0.2); }
+    .score-card.pot  { background: rgba(0,232,198,0.05); border-color: rgba(0,232,198,0.2); }
+    .score-card-title { font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
     .score-card.risk .score-card-title { color: var(--red); }
     .score-card.pot  .score-card-title { color: var(--teal); }
-
-    .score-card-num {
-      font-size: 40px;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
+    .score-card-num { font-size: 40px; font-weight: 900; line-height: 1; margin-bottom: 8px; }
     .score-card.risk .score-card-num { color: var(--red); }
     .score-card.pot  .score-card-num { color: var(--teal); }
-
     .score-card-desc { font-size: 12px; color: var(--t3); line-height: 1.5; }
+
+    /* ── LEARN SECTION ── */
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px; margin-top: 32px;
+    }
+    .lesson-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 18px;
+      border-left: 3px solid var(--teal);
+      transition: transform 0.2s;
+    }
+    .lesson-card:hover { transform: translateY(-2px); }
+    .lesson-num { font-size: 10px; font-weight: 800; letter-spacing: 1px; color: var(--teal); margin-bottom: 6px; }
+    .lesson-title { font-size: 14px; font-weight: 800; color: var(--t1); margin-bottom: 4px; }
+    .lesson-meta { font-size: 11px; color: var(--t3); }
+
+    /* ── PREMIUM SECTION ── */
+    .premium-section {
+      background: linear-gradient(135deg, rgba(26,18,6,0.8), rgba(7,9,15,0.95));
+      border-top: 1px solid rgba(255,215,0,0.15);
+      border-bottom: 1px solid rgba(255,215,0,0.15);
+      position: relative; overflow: hidden;
+    }
+    .premium-section::before {
+      content: "";
+      position: absolute; top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,215,0,0.04) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .premium-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px; margin-top: 36px;
+    }
+    .premium-card {
+      background: rgba(255,215,0,0.04);
+      border: 1px solid rgba(255,215,0,0.15);
+      border-radius: 18px; padding: 22px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .premium-card:hover { border-color: rgba(255,215,0,0.35); transform: translateY(-2px); }
+    .premium-card-icon { font-size: 26px; margin-bottom: 12px; }
+    .premium-card-title { font-size: 15px; font-weight: 800; color: var(--gold); margin-bottom: 6px; }
+    .premium-card-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+    .premium-free { font-size: 11px; color: rgba(255,215,0,0.4); margin-top: 8px; font-style: italic; }
+
+    .price-compare {
+      display: flex; gap: 14px; justify-content: center;
+      flex-wrap: wrap; margin: 32px 0;
+    }
+    .price-box {
+      border-radius: 18px; padding: 22px 28px; text-align: center; min-width: 160px;
+    }
+    .price-box.basic { background: var(--card); border: 1px solid var(--border); }
+    .price-box.premium-box {
+      background: linear-gradient(135deg, #1A1206, #0d0a04);
+      border: 2px solid rgba(255,215,0,0.45);
+    }
+    .price-plan { font-size: 11px; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; }
+    .price-box.basic .price-plan { color: var(--t3); }
+    .price-box.premium-box .price-plan { color: var(--gold); }
+    .price-amount { font-size: 32px; font-weight: 900; line-height: 1; }
+    .price-box.basic .price-amount { color: var(--t1); }
+    .price-box.premium-box .price-amount { color: var(--gold); }
+    .price-period { font-size: 12px; margin-top: 4px; }
+    .price-box.basic .price-period { color: var(--t3); }
+    .price-box.premium-box .price-period { color: rgba(255,215,0,0.6); }
 
     /* ── DISCLAIMER ── */
     .disclaimer-section {
@@ -432,41 +368,29 @@
       border-top: 1px solid rgba(255,183,0,0.15);
       border-bottom: 1px solid rgba(255,183,0,0.15);
     }
-
     .disclaimer-box {
       background: rgba(255,183,0,0.07);
       border: 1px solid rgba(255,183,0,0.2);
-      border-radius: 16px;
-      padding: 24px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
+      border-radius: 16px; padding: 24px;
+      display: flex; gap: 16px; align-items: flex-start;
     }
-
     .disclaimer-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
     .disclaimer-title { font-size: 14px; font-weight: 800; color: var(--amber); margin-bottom: 8px; }
     .disclaimer-text { font-size: 13px; color: var(--t2); line-height: 1.7; }
 
-    /* ── CTA FINAL ── */
+    /* ── CTA ── */
     .cta-section {
-      text-align: center;
-      padding: 80px 24px;
-      position: relative;
-      overflow: hidden;
+      text-align: center; padding: 80px 24px;
+      position: relative; overflow: hidden;
     }
-
     .cta-section::before {
       content: "";
-      position: absolute;
-      bottom: -80px;
-      left: 50%;
+      position: absolute; bottom: -80px; left: 50%;
       transform: translateX(-50%);
-      width: 500px;
-      height: 500px;
+      width: 500px; height: 500px;
       background: radial-gradient(circle, rgba(0,232,198,0.06) 0%, transparent 65%);
       pointer-events: none;
     }
-
     .cta-section h2 { margin-bottom: 10px; }
     .cta-section p { margin-bottom: 32px; }
 
@@ -476,45 +400,22 @@
       border-top: 1px solid var(--border);
       padding: 36px 24px;
     }
-
     .footer-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      text-align: center;
+      max-width: 960px; margin: 0 auto;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 20px; text-align: center;
     }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .footer-links a {
-      color: var(--t3);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      transition: color 0.15s;
-    }
-
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { color: var(--t3); text-decoration: none; font-size: 13px; font-weight: 600; transition: color 0.15s; }
     .footer-links a:hover { color: var(--teal); }
-
-    .footer-copy {
-      color: var(--t3);
-      font-size: 12px;
-      line-height: 1.8;
-    }
+    .footer-copy { color: var(--t3); font-size: 12px; line-height: 1.8; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .nav-links .nav-link:not(.nav-cta) { display: none; }
       .scores-row { grid-template-columns: 1fr; }
-      .phone-card { width: 155px; }
+      .phone-card { width: 150px; }
+      .stats-band { gap: 24px; }
     }
   </style>
 </head>
@@ -528,8 +429,8 @@
     </a>
     <div class="nav-links">
       <a href="#features" class="nav-link">Fonctionnalités</a>
-      <a href="#scores" class="nav-link">Scores</a>
-      <a href="support.html" class="nav-link">Support</a>
+      <a href="#apprendre" class="nav-link">Apprendre</a>
+      <a href="#premium" class="nav-link">Premium</a>
       <a href="#appstore" class="nav-link nav-cta">App Store</a>
     </div>
   </nav>
@@ -538,27 +439,20 @@
   <section class="hero">
     <div class="hero-badge">⚡ Disponible sur l'App Store</div>
     <h1>Investis en crypto<br/><span>plus intelligemment</span></h1>
-    <p class="hero-sub">Scores de risque et de potentiel sur les 50 cryptos les plus importantes. Gratuit, sans inscription, sans tracking.</p>
+    <p class="hero-sub">Scores de risque et potentiel sur les 50 cryptos les plus importantes. 30 leçons progressives. Portfolio, alertes et actualités. Gratuit, sans inscription.</p>
 
     <div class="hero-actions">
-      <a href="#appstore" class="btn-primary">
-        <span>🍎</span> Télécharger sur l'App Store
-      </a>
-      <a href="#features" class="btn-secondary">
-        Découvrir →
-      </a>
+      <a href="#appstore" class="btn-primary">🍎 Télécharger sur l'App Store</a>
+      <a href="#features" class="btn-secondary">Découvrir →</a>
     </div>
 
     <!-- Mockup cartes -->
     <div class="mockup-wrap">
       <div class="phone-card teal">
         <div class="phone-label">Marché</div>
-        <div class="phone-crypto-row">
-          <div class="phone-icon" style="background:rgba(0,232,198,0.15);color:var(--teal);">BTC</div>
-          <div>
-            <div class="phone-sym">BTC</div>
-            <div class="phone-name">Bitcoin</div>
-          </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+          <div style="width:30px;height:30px;border-radius:8px;background:rgba(0,232,198,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--teal);">BTC</div>
+          <div><div class="phone-sym">BTC</div><div class="phone-name">Bitcoin</div></div>
         </div>
         <div class="phone-price">$67 420</div>
         <div class="phone-change-pos">▲ +2.4%</div>
@@ -566,51 +460,78 @@
           <div class="score-pill" style="background:rgba(0,232,198,0.12);color:var(--teal);">Risque 28</div>
           <div class="score-pill" style="background:rgba(0,232,198,0.12);color:var(--teal);">Pot. 72</div>
         </div>
-        <div class="bar-wrap" style="margin-top:8px"><div class="bar-fill" style="width:28%;background:var(--teal)"></div></div>
-      </div>
-
-      <div class="phone-card amber">
-        <div class="phone-label">Profil</div>
-        <div style="margin-bottom:10px">
-          <div style="font-size:11px;font-weight:800;color:var(--amber);margin-bottom:4px">ÉQUILIBRÉ ⚖️</div>
-          <div style="font-size:10px;color:var(--t3)">Budget 500–2 000€</div>
-        </div>
-        <div style="font-size:10px;font-weight:700;color:var(--t3);margin-bottom:6px">SUGGESTIONS</div>
-        <div style="font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px">① BTC — 72%</div>
-        <div style="font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px">② ETH — 68%</div>
-        <div style="font-size:12px;font-weight:800;color:var(--t1)">③ SOL — 82%</div>
+        <div class="bar-wrap"><div class="bar-fill" style="width:28%;background:var(--teal)"></div></div>
       </div>
 
       <div class="phone-card purple">
         <div class="phone-label">Apprendre</div>
         <div style="margin-bottom:8px">
-          <div style="font-size:11px;font-weight:800;color:var(--purple);margin-bottom:4px">BLOCKCHAIN</div>
+          <div style="font-size:10px;font-weight:800;color:var(--purple);margin-bottom:2px">LEÇON 1 / 30</div>
+          <div style="font-size:12px;font-weight:800;color:var(--t1);margin-bottom:6px">🔗 Blockchain</div>
         </div>
-        <div style="font-size:12px;color:var(--t2);line-height:1.5;margin-bottom:8px">Une blockchain c'est un cahier géant que tout le monde peut lire mais que personne ne peut effacer...</div>
-        <div style="font-size:11px;font-weight:700;color:var(--purple)">15 sections · 180+ notions</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.5;margin-bottom:8px">Un registre partagé par des millions d'ordinateurs, impossible à falsifier...</div>
+        <div style="font-size:10px;font-weight:700;color:var(--purple)">📚 30 leçons · 180+ notions</div>
       </div>
 
-      <div class="phone-card" style="border-color:rgba(255,61,90,0.25)">
-        <div class="phone-label" style="color:var(--red);">Watchlist</div>
+      <div class="phone-card amber">
+        <div class="phone-label">Profil</div>
+        <div style="margin-bottom:8px">
+          <div style="font-size:10px;font-weight:800;color:var(--amber);margin-bottom:2px">ÉQUILIBRÉ ⚖️</div>
+          <div style="font-size:10px;color:var(--t3)">Budget 500–2 000€</div>
+        </div>
+        <div style="font-size:10px;font-weight:700;color:var(--t3);margin-bottom:5px">SUGGESTIONS</div>
+        <div style="font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px">① BTC — 72%</div>
+        <div style="font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px">② ETH — 68%</div>
+        <div style="font-size:12px;font-weight:800;color:var(--t1)">③ SOL — 82%</div>
+      </div>
+
+      <div class="phone-card gold" style="border-color:rgba(255,215,0,0.25);background:linear-gradient(135deg,#1A1206,#0f1220);">
+        <div class="phone-label" style="color:var(--gold);">✦ Premium</div>
+        <div style="margin-bottom:8px">
+          <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:6px">CE QUE TU DÉBLOQUÉS</div>
+          <div style="font-size:11px;color:rgba(255,215,0,0.7);margin-bottom:3px">🤖 Analyse IA illimitée</div>
+          <div style="font-size:11px;color:rgba(255,215,0,0.7);margin-bottom:3px">📚 30 leçons complètes</div>
+          <div style="font-size:11px;color:rgba(255,215,0,0.7);margin-bottom:3px">📊 Score portefeuille</div>
+          <div style="font-size:11px;color:rgba(255,215,0,0.7)">♾️ Accès illimité</div>
+        </div>
+      </div>
+
+      <div class="phone-card blue">
+        <div class="phone-label">Pulse</div>
         <div style="margin-bottom:6px">
-          <div style="font-size:10px;color:var(--t3);margin-bottom:6px">⭐ MES CRYPTOS</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
-            <span style="font-size:13px;font-weight:800;color:var(--t1)">BTC</span>
-            <span style="font-size:12px;font-weight:700;color:var(--teal)">+2.4%</span>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
-            <span style="font-size:13px;font-weight:800;color:var(--t1)">ETH</span>
-            <span style="font-size:12px;font-weight:700;color:var(--red)">-1.2%</span>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <span style="font-size:13px;font-weight:800;color:var(--t1)">SOL</span>
-            <span style="font-size:12px;font-weight:700;color:var(--teal)">+5.8%</span>
-          </div>
+          <div style="font-size:10px;font-weight:700;color:var(--t3);margin-bottom:6px">🗞 ACTUALITÉS</div>
+          <div style="font-size:11px;font-weight:800;color:var(--t1);margin-bottom:4px;line-height:1.3">Bitcoin franchit les 70 000$...</div>
+          <div style="font-size:11px;color:var(--t3);margin-bottom:8px;line-height:1.4">Il y a 2h · CoinMarketCap</div>
+          <div style="font-size:11px;font-weight:800;color:var(--t1);line-height:1.3">ETH se consolide avant...</div>
+          <div style="font-size:11px;color:var(--t3);margin-top:2px">Il y a 4h</div>
         </div>
       </div>
     </div>
-
   </section>
+
+  <!-- ── STATS ── -->
+  <div class="stats-band">
+    <div class="stat-item">
+      <div class="stat-num">50</div>
+      <div class="stat-lbl">Cryptos suivies</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">30</div>
+      <div class="stat-lbl">Leçons progressives</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">180+</div>
+      <div class="stat-lbl">Notions expliquées</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">60s</div>
+      <div class="stat-lbl">Rafraîchissement live</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0€</div>
+      <div class="stat-lbl">Pour commencer</div>
+    </div>
+  </div>
 
   <!-- ── FEATURES ── -->
   <section id="features">
@@ -631,24 +552,32 @@
           <div class="feature-desc">Chaque crypto reçoit un score de risque (0-100) et un score de potentiel (0-100), calculés sur des données fondamentales et live.</div>
         </div>
         <div class="feature-card">
+          <div class="feature-icon">💼</div>
+          <div class="feature-title">Portfolio P&L</div>
+          <div class="feature-desc">Suivi de tes positions en temps réel : prix d'achat, quantité, performance globale et par actif.</div>
+          <span class="feature-badge badge-new">NOUVEAU</span>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <div class="feature-title">Alertes prix</div>
+          <div class="feature-desc">Configure des alertes au-dessus ou en-dessous d'un seuil. Reçois une notification dès que le prix est atteint.</div>
+          <span class="feature-badge badge-new">NOUVEAU</span>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🗞️</div>
+          <div class="feature-title">Pulse — Actualités</div>
+          <div class="feature-desc">Flux d'actualités crypto en temps réel. Reste informé des dernières nouvelles du marché sans quitter l'app.</div>
+          <span class="feature-badge badge-new">NOUVEAU</span>
+        </div>
+        <div class="feature-card">
           <div class="feature-icon">🎯</div>
           <div class="feature-title">Recommandations par profil</div>
-          <div class="feature-desc">Renseigne ton budget, ton profil de risque, et ton objectif de rendement. L'app suggère les cryptos les plus adaptées.</div>
+          <div class="feature-desc">Renseigne ton budget, ton profil de risque et ton objectif. L'app suggère les cryptos les plus adaptées.</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">⭐</div>
           <div class="feature-title">Watchlist personnelle</div>
           <div class="feature-desc">Suis jusqu'à 3 cryptos en watchlist et 2 coups de cœur. Tes sélections sont sauvegardées localement.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📚</div>
-          <div class="feature-title">Apprendre</div>
-          <div class="feature-desc">180+ notions expliquées simplement — Blockchain, DeFi, NFT, Staking, Layer 2... Pour tous les niveaux.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🏆</div>
-          <div class="feature-title">Top du jour</div>
-          <div class="feature-desc">Top 5 gagnants et perdants du jour avec contexte macro-économique global en temps réel.</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🔒</div>
@@ -658,7 +587,12 @@
         <div class="feature-card">
           <div class="feature-icon">🌍</div>
           <div class="feature-title">Français & Anglais</div>
-          <div class="feature-desc">Interface entièrement disponible en français et en anglais, basculable en un tap.</div>
+          <div class="feature-desc">Interface entièrement disponible en français et en anglais, basculable en un tap depuis les paramètres.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <div class="feature-title">Contexte macro</div>
+          <div class="feature-desc">Score macro-économique global, dominance Bitcoin, peur & avidité du marché. Pour ne jamais investir dans le vide.</div>
         </div>
       </div>
     </div>
@@ -668,29 +602,34 @@
   <section style="padding-top:0;">
     <div class="section-inner">
       <div class="section-label">Navigation</div>
-      <h2>5 onglets, 0 superflu</h2>
+      <h2>6 onglets, 0 superflu</h2>
       <p class="section-sub">Une navigation claire et rapide, pensée pour l'essentiel.</p>
 
       <div class="tabs-grid">
         <div class="tab-card">
           <div class="tab-emoji">📊</div>
           <div class="tab-name">Marché</div>
-          <div class="tab-desc">Top 50 crypto avec scores et filtres</div>
+          <div class="tab-desc">Top 50 crypto avec scores, recherche et filtres</div>
         </div>
         <div class="tab-card">
-          <div class="tab-emoji">⭐</div>
-          <div class="tab-name">Watchlist</div>
-          <div class="tab-desc">Tes cryptos favorites à portée de main</div>
+          <div class="tab-emoji">💼</div>
+          <div class="tab-name">Portfolio</div>
+          <div class="tab-desc">Suivi P&L de tes positions en temps réel</div>
+        </div>
+        <div class="tab-card">
+          <div class="tab-emoji">🔔</div>
+          <div class="tab-name">Alertes</div>
+          <div class="tab-desc">Notifications de prix personnalisées</div>
+        </div>
+        <div class="tab-card">
+          <div class="tab-emoji">🗞️</div>
+          <div class="tab-name">Pulse</div>
+          <div class="tab-desc">Flux d'actualités crypto en direct</div>
         </div>
         <div class="tab-card">
           <div class="tab-emoji">📚</div>
           <div class="tab-name">Apprendre</div>
-          <div class="tab-desc">Glossaire complet en langage simple</div>
-        </div>
-        <div class="tab-card">
-          <div class="tab-emoji">🏆</div>
-          <div class="tab-name">Top</div>
-          <div class="tab-desc">Gagnants et perdants du jour</div>
+          <div class="tab-desc">30 leçons + glossaire de 180+ notions</div>
         </div>
         <div class="tab-card">
           <div class="tab-emoji">🎯</div>
@@ -735,6 +674,170 @@
     </div>
   </section>
 
+  <!-- ── APPRENDRE ── -->
+  <section id="apprendre">
+    <div class="section-inner">
+      <div class="section-label">Apprendre</div>
+      <h2>30 leçons pour maîtriser la crypto</h2>
+      <p class="section-sub">Du débutant à l'expert — une leçon par jour avec méthode : intro, 3 parties structurées, exemples concrets, récap.</p>
+
+      <div class="lessons-grid">
+        <div class="lesson-card">
+          <div class="lesson-num">LEÇON 1 · DÉBUTANT</div>
+          <div class="lesson-title">🔗 La Blockchain</div>
+          <div class="lesson-meta">⏱ 7 min · Comment ça marche vraiment</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">LEÇON 2 · DÉBUTANT</div>
+          <div class="lesson-title">₿ Bitcoin — l'or numérique</div>
+          <div class="lesson-meta">⏱ 8 min · Halving, rareté, valeur</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">LEÇON 3 · DÉBUTANT</div>
+          <div class="lesson-title">⚙️ Ethereum & Smart Contracts</div>
+          <div class="lesson-meta">⏱ 9 min · La plateforme de tout</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">LEÇON 4 · DÉBUTANT</div>
+          <div class="lesson-title">📊 Lire un marché crypto</div>
+          <div class="lesson-meta">⏱ 7 min · Market cap, volume, rangs</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">LEÇON 5 · INTERMÉDIAIRE</div>
+          <div class="lesson-title">📈 DeFi — Finance décentralisée</div>
+          <div class="lesson-meta">⏱ 10 min · Prêt, échange, rendements</div>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-num">LEÇON 10 · INTERMÉDIAIRE</div>
+          <div class="lesson-title">🧠 Psychologie du trader</div>
+          <div class="lesson-meta">⏱ 9 min · FOMO, FUD, biais cognitifs</div>
+        </div>
+        <div class="lesson-card" style="border-left-color:var(--purple)">
+          <div class="lesson-num" style="color:var(--purple)">LEÇON 15 · INTERMÉDIAIRE</div>
+          <div class="lesson-title">📊 Analyse technique</div>
+          <div class="lesson-meta">⏱ 10 min · RSI, MACD, bougies</div>
+        </div>
+        <div class="lesson-card" style="border-left-color:var(--amber)">
+          <div class="lesson-num" style="color:var(--amber)">LEÇON 18 · DÉBUTANT</div>
+          <div class="lesson-title">💸 Fiscalité crypto France</div>
+          <div class="lesson-meta">⏱ 8 min · Flat tax 30%, déclaration</div>
+        </div>
+        <div class="lesson-card" style="border-left-color:var(--blue)">
+          <div class="lesson-num" style="color:var(--blue)">LEÇON 30 · INTERMÉDIAIRE</div>
+          <div class="lesson-title">🔮 L'avenir de la crypto</div>
+          <div class="lesson-meta">⏱ 10 min · IA, RWA, 2025-2030</div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:32px">
+        <p style="color:var(--t3);font-size:13px;margin-bottom:16px">Leçon 1 gratuite · 1 nouvelle leçon débloquée par jour avec Premium</p>
+        <a href="#appstore" class="btn-primary">📚 Commencer à apprendre</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PREMIUM ── -->
+  <section id="premium" class="premium-section">
+    <div class="section-inner">
+      <div class="section-label" style="color:var(--gold)">Premium</div>
+      <h2 style="color:var(--gold)">✦ RiskCrypto Premium</h2>
+      <p class="section-sub">Passe au niveau supérieur. Des outils plus puissants, des données plus profondes, une progression accélérée.</p>
+
+      <div class="price-compare">
+        <div class="price-box basic">
+          <div class="price-plan">BASIC</div>
+          <div class="price-amount">0€</div>
+          <div class="price-period">Toujours gratuit</div>
+        </div>
+        <div class="price-box premium-box">
+          <div class="price-plan">✦ PREMIUM</div>
+          <div class="price-amount">4,99€</div>
+          <div class="price-period">/ mois · Bientôt disponible</div>
+        </div>
+      </div>
+
+      <div class="premium-grid">
+        <div class="premium-card">
+          <div class="premium-card-icon">🤖</div>
+          <div class="premium-card-title">Analyse IA Illimitée</div>
+          <div class="premium-card-desc">Analyse approfondie par IA pour n'importe quelle crypto du top 50 — facteurs de risque, sentiment de marché, catalyseurs.</div>
+          <div class="premium-free">Gratuit : BTC, ETH, SOL seulement</div>
+        </div>
+        <div class="premium-card">
+          <div class="premium-card-icon">📚</div>
+          <div class="premium-card-title">30 Leçons Progressives</div>
+          <div class="premium-card-desc">Débloque une nouvelle leçon chaque jour. Du débutant à l'expert en 30 jours, à ton rythme.</div>
+          <div class="premium-free">Gratuit : leçon 1 seulement</div>
+        </div>
+        <div class="premium-card">
+          <div class="premium-card-icon">📊</div>
+          <div class="premium-card-title">Score de Portefeuille</div>
+          <div class="premium-card-desc">Score de santé global, analyse de diversification, corrélation entre actifs et recommandation de rééquilibrage.</div>
+          <div class="premium-free">Gratuit : suivi P&L basique</div>
+        </div>
+        <div class="premium-card">
+          <div class="premium-card-icon">🔔</div>
+          <div class="premium-card-title">Alertes Push Intelligentes</div>
+          <div class="premium-card-desc">Notifications en temps réel : mouvements baleines, volumes inhabituels, changements de niveau de risque.</div>
+          <div class="premium-free">Gratuit : alertes prix manuelles</div>
+        </div>
+        <div class="premium-card">
+          <div class="premium-card-icon">📈</div>
+          <div class="premium-card-title">Backtesting Portefeuille</div>
+          <div class="premium-card-desc">Simule les performances historiques d'un portefeuille sur 1, 3 ou 6 mois avant d'investir.</div>
+          <div class="premium-free">Gratuit : données actuelles uniquement</div>
+        </div>
+        <div class="premium-card">
+          <div class="premium-card-icon">♾️</div>
+          <div class="premium-card-title">Accès Illimité</div>
+          <div class="premium-card-desc">Recommandations journalières illimitées, watchlist étendue jusqu'à 20 cryptos, coups de cœur sans limite.</div>
+          <div class="premium-free">Gratuit : 5 reco/jour, watchlist ×3</div>
+        </div>
+        <div class="premium-card">
+          <div class="premium-card-icon">🔮</div>
+          <div class="premium-card-title">Signaux & Prévisions IA</div>
+          <div class="premium-card-desc">Signaux d'achat et de vente générés par IA sur la base des tendances techniques et des données on-chain.</div>
+          <div class="premium-free">Gratuit : scores statiques uniquement</div>
+        </div>
+        <div class="premium-card">
+          <div class="premium-card-icon">🎯</div>
+          <div class="premium-card-title">Mode Expert</div>
+          <div class="premium-card-desc">Données avancées on-chain, liquidations, flux institutionnels. Pour ceux qui veulent aller plus loin.</div>
+          <div class="premium-free">Gratuit : données de base</div>
+        </div>
+        <div class="premium-card">
+          <div class="premium-card-icon">💼</div>
+          <div class="premium-card-title">Multi-portefeuilles</div>
+          <div class="premium-card-desc">Gérer jusqu'à 5 portefeuilles distincts — trading, DCA long terme, staking, etc.</div>
+          <div class="premium-free">Gratuit : 1 portefeuille</div>
+        </div>
+        <div class="premium-card">
+          <div class="premium-card-icon">📥</div>
+          <div class="premium-card-title">Export CSV</div>
+          <div class="premium-card-desc">Télécharge tes transactions et P&L en CSV. Prêt pour ta déclaration fiscale ou ton comptable.</div>
+          <div class="premium-free">Gratuit : consultation uniquement</div>
+        </div>
+        <div class="premium-card">
+          <div class="premium-card-icon">🔗</div>
+          <div class="premium-card-title">Alertes On-chain</div>
+          <div class="premium-card-desc">Suis les gros mouvements de baleines, les transferts massifs et les nouveaux wallets actifs en temps réel.</div>
+          <div class="premium-free">Gratuit : alertes prix uniquement</div>
+        </div>
+        <div class="premium-card">
+          <div class="premium-card-icon">🎓</div>
+          <div class="premium-card-title">Quiz & Certifications</div>
+          <div class="premium-card-desc">Valide tes connaissances après chaque leçon et obtiens un badge de certification partageable.</div>
+          <div class="premium-free">Gratuit : contenu lecture seule</div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:40px">
+        <a href="#appstore" class="btn-premium">✦ Je veux le Premium</a>
+        <p style="color:rgba(255,215,0,0.4);font-size:12px;margin-top:12px">Bientôt disponible · Rejoins la liste d'attente via l'app</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ── DISCLAIMER ── -->
   <section class="disclaimer-section">
     <div class="section-inner">
@@ -758,12 +861,8 @@
     <p class="section-sub">Gratuit, sans compte, sans publicité. Disponible sur iPhone.</p>
 
     <div class="hero-actions">
-      <a href="#" class="btn-primary">
-        🍎 &nbsp;Disponible sur l'App Store
-      </a>
-      <a href="support.html" class="btn-secondary">
-        Aide & Support →
-      </a>
+      <a href="#" class="btn-primary">🍎 &nbsp;Disponible sur l'App Store</a>
+      <a href="support.html" class="btn-secondary">Aide & Support →</a>
     </div>
 
     <p style="color:var(--t3);font-size:12px;margin-top:12px;">iOS 16+ requis · iPhone uniquement</p>
@@ -779,6 +878,8 @@
       <div class="footer-links">
         <a href="index.html">Accueil</a>
         <a href="#features">Fonctionnalités</a>
+        <a href="#apprendre">Apprendre</a>
+        <a href="#premium">Premium</a>
         <a href="support.html">Support</a>
         <a href="privacy.html">Confidentialité</a>
       </div>
