@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RiskCrypto — Scores de risque et de potentiel, 30 leçons crypto, portfolio. Gratuit sur l'App Store." />
+  <meta name="description" content="RiskCrypto — Scores de risque et de potentiel, 30 leçons crypto, comparateur top 50, portfolio. Gratuit sur l'App Store." />
   <meta property="og:title" content="RiskCrypto — Investis plus intelligemment" />
-  <meta property="og:description" content="Scores de risque et potentiel pour les 50 cryptos les plus importantes. 30 leçons progressives. Gratuit sur l'App Store." />
+  <meta property="og:description" content="Scores de risque et potentiel pour les 50 cryptos les plus importantes. Comparateur, watchlist, 30 leçons progressives. Gratuit sur l'App Store." />
   <meta property="og:type" content="website" />
   <title>RiskCrypto — Investis plus intelligemment</title>
   <style>
@@ -254,7 +254,8 @@
       display: inline-block; margin-top: 10px;
       font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px;
     }
-    .badge-new { background: rgba(0,232,198,0.12); color: var(--teal); }
+    .badge-new     { background: rgba(0,232,198,0.12); color: var(--teal); }
+    .badge-update  { background: rgba(129,140,248,0.12); color: var(--purple); }
     .badge-premium { background: rgba(255,215,0,0.1); color: var(--gold); }
 
     /* ── TABS ── */
@@ -307,6 +308,44 @@
     .lesson-num { font-size: 10px; font-weight: 800; letter-spacing: 1px; color: var(--teal); margin-bottom: 6px; }
     .lesson-title { font-size: 14px; font-weight: 800; color: var(--t1); margin-bottom: 4px; }
     .lesson-meta { font-size: 11px; color: var(--t3); }
+
+    /* ── COMPARATEUR SECTION ── */
+    .comp-demo {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 24px; margin-top: 32px;
+    }
+    .comp-row {
+      display: flex; gap: 12px; align-items: center;
+      justify-content: center; margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .comp-chip {
+      border-radius: 14px; padding: 14px 20px; text-align: center;
+      min-width: 110px; flex: 1; max-width: 160px;
+    }
+    .comp-vs { color: var(--t3); font-weight: 900; font-size: 18px; }
+    .comp-history {
+      display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+    }
+    .comp-history-chip {
+      background: rgba(129,140,248,0.08);
+      border: 1px solid rgba(129,140,248,0.2);
+      border-radius: 10px; padding: 6px 12px;
+      font-size: 12px; font-weight: 700; color: var(--purple);
+    }
+
+    /* ── WATCHLIST SECTION ── */
+    .watchlist-demo {
+      display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; justify-content: center;
+    }
+    .slot-row {
+      display: flex; gap: 6px;
+    }
+    .slot {
+      width: 28px; height: 6px; border-radius: 3px;
+    }
+    .slot.filled-teal { background: var(--teal); }
+    .slot.filled-red  { background: var(--red); }
+    .slot.empty       { background: rgba(255,255,255,0.08); }
 
     /* ── PREMIUM SECTION ── */
     .premium-section {
@@ -429,8 +468,8 @@
     </a>
     <div class="nav-links">
       <a href="#features" class="nav-link">Fonctionnalités</a>
+      <a href="#comparateur" class="nav-link">Comparateur</a>
       <a href="#apprendre" class="nav-link">Apprendre</a>
-      <a href="#premium" class="nav-link">Premium</a>
       <a href="#appstore" class="nav-link nav-cta">App Store</a>
     </div>
   </nav>
@@ -439,7 +478,7 @@
   <section class="hero">
     <div class="hero-badge">⚡ Disponible sur l'App Store</div>
     <h1>Investis en crypto<br/><span>plus intelligemment</span></h1>
-    <p class="hero-sub">Scores de risque et potentiel sur les 50 cryptos les plus importantes. 30 leçons progressives. Portfolio et suivi en temps réel. Gratuit, sans inscription.</p>
+    <p class="hero-sub">Scores de risque et potentiel sur les 50 cryptos les plus importantes. Comparateur complet, watchlist, 30 leçons progressives. Gratuit, sans inscription.</p>
 
     <div class="hero-actions">
       <a href="#appstore" class="btn-primary">🍎 Télécharger sur l'App Store</a>
@@ -463,37 +502,37 @@
         <div class="bar-wrap"><div class="bar-fill" style="width:28%;background:var(--teal)"></div></div>
       </div>
 
+      <div class="phone-card blue">
+        <div class="phone-label">Watchlist</div>
+        <div style="margin-bottom:8px">
+          <div style="font-size:10px;font-weight:800;color:var(--blue);margin-bottom:4px">⭐ 2/5 · ❤️ 1/3</div>
+          <div style="font-size:9px;color:var(--t3);margin-bottom:6px">2 places restantes · 2 dispo</div>
+        </div>
+        <div style="display:flex;gap:3px;margin-bottom:8px">
+          <div style="flex:1;height:4px;border-radius:2px;background:var(--blue)"></div>
+          <div style="flex:1;height:4px;border-radius:2px;background:var(--blue)"></div>
+          <div style="flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,0.08)"></div>
+          <div style="flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,0.08)"></div>
+          <div style="flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,0.08)"></div>
+          <div style="width:1px;background:rgba(255,255,255,0.08)"></div>
+          <div style="flex:1;height:4px;border-radius:2px;background:var(--red)"></div>
+          <div style="flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,0.08)"></div>
+          <div style="flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,0.08)"></div>
+        </div>
+        <div style="font-size:10px;font-weight:700;color:var(--t1);margin-bottom:2px">BTC · ETH</div>
+        <div style="font-size:9px;color:var(--t3)">Santé portefeuille · 78/100</div>
+      </div>
+
       <div class="phone-card purple">
-        <div class="phone-label">Apprendre</div>
-        <div style="margin-bottom:8px">
-          <div style="font-size:10px;font-weight:800;color:var(--purple);margin-bottom:2px">LEÇON 1 / 30</div>
-          <div style="font-size:12px;font-weight:800;color:var(--t1);margin-bottom:6px">🔗 Blockchain</div>
+        <div class="phone-label">Comparateur</div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
+          <div style="background:rgba(0,232,198,0.15);border-radius:8px;padding:4px 8px;font-size:11px;font-weight:900;color:var(--teal);">BTC</div>
+          <div style="color:var(--t3);font-weight:900;font-size:13px;">⚡</div>
+          <div style="background:rgba(255,61,90,0.15);border-radius:8px;padding:4px 8px;font-size:11px;font-weight:900;color:var(--red);">DOGE</div>
         </div>
-        <div style="font-size:11px;color:var(--t2);line-height:1.5;margin-bottom:8px">Un registre partagé par des millions d'ordinateurs, impossible à falsifier...</div>
-        <div style="font-size:10px;font-weight:700;color:var(--purple)">📚 30 leçons · 180+ notions</div>
-      </div>
-
-      <div class="phone-card amber">
-        <div class="phone-label">Profil</div>
-        <div style="margin-bottom:8px">
-          <div style="font-size:10px;font-weight:800;color:var(--amber);margin-bottom:2px">ÉQUILIBRÉ ⚖️</div>
-          <div style="font-size:10px;color:var(--t3)">Budget 500–2 000€</div>
-        </div>
-        <div style="font-size:10px;font-weight:700;color:var(--t3);margin-bottom:5px">SUGGESTIONS</div>
-        <div style="font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px">① BTC — 72%</div>
-        <div style="font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px">② ETH — 68%</div>
-        <div style="font-size:12px;font-weight:800;color:var(--t1)">③ SOL — 82%</div>
-      </div>
-
-      <div class="phone-card gold" style="border-color:rgba(255,215,0,0.25);background:linear-gradient(135deg,#1A1206,#0f1220);">
-        <div class="phone-label" style="color:var(--gold);">✦ Premium</div>
-        <div style="margin-bottom:8px">
-          <div style="font-size:11px;font-weight:800;color:var(--gold);margin-bottom:6px">CE QUE TU DÉBLOQUÉS</div>
-          <div style="font-size:11px;color:rgba(255,215,0,0.7);margin-bottom:3px">🤖 Analyse IA illimitée</div>
-          <div style="font-size:11px;color:rgba(255,215,0,0.7);margin-bottom:3px">📚 30 leçons complètes</div>
-          <div style="font-size:11px;color:rgba(255,215,0,0.7);margin-bottom:3px">📊 Score portefeuille</div>
-          <div style="font-size:11px;color:rgba(255,215,0,0.7)">♾️ Accès illimité</div>
-        </div>
+        <div style="font-size:9px;font-weight:800;color:var(--purple);margin-bottom:4px">🕐 RÉCENT</div>
+        <div style="font-size:10px;color:var(--t3);margin-bottom:2px">ETH ⚡ SOL</div>
+        <div style="font-size:10px;color:var(--t3)">BNB ⚡ ADA</div>
       </div>
 
     </div>
@@ -539,23 +578,35 @@
         <div class="feature-card">
           <div class="feature-icon">⚡</div>
           <div class="feature-title">Scores Risque & Potentiel</div>
-          <div class="feature-desc">Chaque crypto reçoit un score de risque (0-100) et un score de potentiel (0-100), calculés sur des données fondamentales et live.</div>
+          <div class="feature-desc">Chaque crypto reçoit un score de risque (0–100) et un score de potentiel (0–100), calculés sur des données fondamentales et live.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚔️</div>
+          <div class="feature-title">Comparateur Top 50</div>
+          <div class="feature-desc">Compare n'importe quelles 2 cryptos du top 50 côte à côte — risque, potentiel, performance, market cap. Historique de tes dernières comparaisons.</div>
+          <span class="feature-badge badge-update">MIS À JOUR</span>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <div class="feature-title">Watchlist & Coups de cœur</div>
+          <div class="feature-desc">Suis jusqu'à 3 cryptos en watchlist et 2 coups de cœur. Indicateur de places disponibles visible en temps réel. Premium : 5 watchlist · 3 coups de cœur.</div>
+          <span class="feature-badge badge-update">MIS À JOUR</span>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <div class="feature-title">Santé du portefeuille</div>
+          <div class="feature-desc">Score de santé global calculé en temps réel sur ta watchlist : risque moyen, diversification par catégorie, concentration et conseil de rééquilibrage.</div>
+          <span class="feature-badge badge-premium">PREMIUM</span>
         </div>
         <div class="feature-card">
           <div class="feature-icon">💼</div>
           <div class="feature-title">Portfolio P&L</div>
           <div class="feature-desc">Suivi de tes positions en temps réel : prix d'achat, quantité, performance globale et par actif.</div>
-          <span class="feature-badge badge-new">NOUVEAU</span>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🎯</div>
           <div class="feature-title">Recommandations par profil</div>
-          <div class="feature-desc">Renseigne ton budget, ton profil de risque et ton objectif. L'app suggère les cryptos les plus adaptées.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⭐</div>
-          <div class="feature-title">Watchlist personnelle</div>
-          <div class="feature-desc">Suis jusqu'à 3 cryptos en watchlist et 2 coups de cœur. Tes sélections sont sauvegardées localement.</div>
+          <div class="feature-desc">Renseigne ton budget, ton profil de risque et ton objectif. L'app suggère les cryptos les plus adaptées à ta situation.</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🔒</div>
@@ -580,36 +631,82 @@
   <section style="padding-top:0;">
     <div class="section-inner">
       <div class="section-label">Navigation</div>
-      <h2>4 onglets, 0 superflu</h2>
+      <h2>5 onglets, 0 superflu</h2>
       <p class="section-sub">Une navigation claire et rapide, pensée pour l'essentiel.</p>
 
       <div class="tabs-grid">
         <div class="tab-card">
           <div class="tab-emoji">📊</div>
           <div class="tab-name">Marché</div>
-          <div class="tab-desc">Top 50 crypto avec scores, recherche et filtres</div>
+          <div class="tab-desc">Top 50 avec scores, recherche et filtres live</div>
         </div>
         <div class="tab-card">
-          <div class="tab-emoji">💼</div>
-          <div class="tab-name">Portfolio</div>
-          <div class="tab-desc">Suivi P&L de tes positions en temps réel</div>
+          <div class="tab-emoji">⭐</div>
+          <div class="tab-name">Watchlist</div>
+          <div class="tab-desc">Tes cryptos favorites + santé du portefeuille</div>
+        </div>
+        <div class="tab-card">
+          <div class="tab-emoji">🏆</div>
+          <div class="tab-name">Top</div>
+          <div class="tab-desc">Gagnants & perdants du jour + crypto la plus médiatisée</div>
         </div>
         <div class="tab-card">
           <div class="tab-emoji">📚</div>
           <div class="tab-name">Apprendre</div>
-          <div class="tab-desc">30 leçons + glossaire de 180+ notions</div>
+          <div class="tab-desc">30 leçons + quiz + glossaire 180+ notions</div>
         </div>
         <div class="tab-card">
           <div class="tab-emoji">🎯</div>
           <div class="tab-name">Profil</div>
-          <div class="tab-desc">Suggestions selon ton profil investisseur</div>
+          <div class="tab-desc">Recommandations selon ton profil + comparateur top 50</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ── COMPARATEUR ── -->
+  <section id="comparateur" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="section-inner">
+      <div class="section-label">Comparateur</div>
+      <h2>⚔️ Compare les 50 meilleures cryptos</h2>
+      <p class="section-sub">Sélectionne n'importe quelles 2 cryptos du top 50 et compare-les côte à côte : risque, potentiel, performance 24h, market cap. L'app désigne le meilleur rapport risque/potentiel.</p>
+
+      <div class="comp-demo">
+        <div class="comp-row">
+          <div class="comp-chip" style="background:rgba(0,232,198,0.08);border:1.5px solid rgba(0,232,198,0.3);text-align:center;">
+            <div style="font-size:11px;color:var(--t3);margin-bottom:4px">CRYPTO 1</div>
+            <div style="font-size:20px;font-weight:900;color:var(--teal);">BTC</div>
+            <div style="display:flex;gap:4px;justify-content:center;margin-top:6px">
+              <span style="background:rgba(0,232,198,0.12);border-radius:5px;padding:2px 6px;font-size:9px;font-weight:800;color:var(--teal);">R 28</span>
+              <span style="background:rgba(0,232,198,0.12);border-radius:5px;padding:2px 6px;font-size:9px;font-weight:800;color:var(--teal);">P 72</span>
+            </div>
+          </div>
+          <div class="comp-vs">⚡</div>
+          <div class="comp-chip" style="background:rgba(255,61,90,0.08);border:1.5px solid rgba(255,61,90,0.3);text-align:center;">
+            <div style="font-size:11px;color:var(--t3);margin-bottom:4px">CRYPTO 2</div>
+            <div style="font-size:20px;font-weight:900;color:var(--red);">DOGE</div>
+            <div style="display:flex;gap:4px;justify-content:center;margin-top:6px">
+              <span style="background:rgba(255,61,90,0.12);border-radius:5px;padding:2px 6px;font-size:9px;font-weight:800;color:var(--red);">R 78</span>
+              <span style="background:rgba(255,183,0,0.12);border-radius:5px;padding:2px 6px;font-size:9px;font-weight:800;color:var(--amber);">P 45</span>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-bottom:16px">
+          <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--purple);margin-bottom:8px">🕐 RÉCENT — HISTORIQUE</div>
+          <div class="comp-history">
+            <span class="comp-history-chip">ETH ⚡ SOL</span>
+            <span class="comp-history-chip">BNB ⚡ ADA</span>
+            <span class="comp-history-chip">XRP ⚡ DOT</span>
+            <span class="comp-history-chip">AVAX ⚡ MATIC</span>
+          </div>
+        </div>
+        <p style="text-align:center;font-size:12px;color:var(--t3);">Les 5 dernières comparaisons sont mémorisées · Recompare en un tap</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ── SCORES ── -->
-  <section id="scores" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <section id="scores">
     <div class="section-inner">
       <div class="section-label">Les scores RiskCrypto</div>
       <h2>Comprendre le risque avant d'investir</h2>
@@ -643,11 +740,20 @@
   </section>
 
   <!-- ── APPRENDRE ── -->
-  <section id="apprendre">
+  <section id="apprendre" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="section-inner">
       <div class="section-label">Apprendre</div>
       <h2>30 leçons pour maîtriser la crypto</h2>
-      <p class="section-sub">Du débutant à l'expert — une leçon par jour avec méthode : intro, 3 parties structurées, exemples concrets, récap.</p>
+      <p class="section-sub">Du débutant à l'expert — une leçon par jour avec méthode : intro, 3 parties structurées, exemples concrets, récap. Avec quiz et système de vies.</p>
+
+      <!-- Système de vies -->
+      <div style="background:rgba(255,61,90,0.05);border:1px solid rgba(255,61,90,0.2);border-radius:16px;padding:20px;margin-bottom:24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+        <div style="font-size:32px;">❤️❤️❤️</div>
+        <div>
+          <div style="font-size:14px;font-weight:800;color:var(--t1);margin-bottom:4px">Système de vies — Débloqué après le Quiz 1</div>
+          <div style="font-size:13px;color:var(--t3);line-height:1.6;">3 vies pour valider tes quiz. Une vie perdue à chaque mauvaise réponse — rechargement automatique en 3h. Le système s'active uniquement après avoir complété le premier quiz.</div>
+        </div>
+      </div>
 
       <div class="lessons-grid">
         <div class="lesson-card">
@@ -693,109 +799,12 @@
         <div class="lesson-card" style="border-left-color:var(--blue)">
           <div class="lesson-num" style="color:var(--blue)">LEÇON 30 · INTERMÉDIAIRE</div>
           <div class="lesson-title">🔮 L'avenir de la crypto</div>
-          <div class="lesson-meta">⏱ 10 min · IA, RWA, 2025-2030</div>
+          <div class="lesson-meta">⏱ 10 min · IA, RWA, 2025–2030</div>
         </div>
       </div>
 
       <div style="text-align:center;margin-top:32px">
-        <p style="color:var(--t3);font-size:13px;margin-bottom:16px">Leçon 1 gratuite · 1 nouvelle leçon débloquée par jour avec Premium</p>
         <a href="#appstore" class="btn-primary">📚 Commencer à apprendre</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PREMIUM ── -->
-  <section id="premium" class="premium-section">
-    <div class="section-inner">
-      <div class="section-label" style="color:var(--gold)">Premium</div>
-      <h2 style="color:var(--gold)">✦ RiskCrypto Premium</h2>
-      <p class="section-sub">Passe au niveau supérieur. Des outils plus puissants, des données plus profondes, une progression accélérée.</p>
-
-      <div class="price-compare">
-        <div class="price-box basic">
-          <div class="price-plan">BASIC</div>
-          <div class="price-amount">0€</div>
-          <div class="price-period">Toujours gratuit</div>
-        </div>
-        <div class="price-box premium-box">
-          <div class="price-plan">✦ PREMIUM</div>
-          <div class="price-amount">4,99€</div>
-          <div class="price-period">/ mois · Bientôt disponible</div>
-        </div>
-      </div>
-
-      <div class="premium-grid">
-        <div class="premium-card">
-          <div class="premium-card-icon">🤖</div>
-          <div class="premium-card-title">Analyse IA Illimitée</div>
-          <div class="premium-card-desc">Analyse approfondie par IA pour n'importe quelle crypto du top 50 — facteurs de risque, sentiment de marché, catalyseurs.</div>
-          <div class="premium-free">Gratuit : BTC, ETH, SOL seulement</div>
-        </div>
-        <div class="premium-card">
-          <div class="premium-card-icon">📚</div>
-          <div class="premium-card-title">30 Leçons Progressives</div>
-          <div class="premium-card-desc">Débloque une nouvelle leçon chaque jour. Du débutant à l'expert en 30 jours, à ton rythme.</div>
-          <div class="premium-free">Gratuit : leçon 1 seulement</div>
-        </div>
-        <div class="premium-card">
-          <div class="premium-card-icon">📊</div>
-          <div class="premium-card-title">Score de Portefeuille</div>
-          <div class="premium-card-desc">Score de santé global, analyse de diversification, corrélation entre actifs et recommandation de rééquilibrage.</div>
-          <div class="premium-free">Gratuit : suivi P&L basique</div>
-        </div>
-        <div class="premium-card">
-          <div class="premium-card-icon">📈</div>
-          <div class="premium-card-title">Backtesting Portefeuille</div>
-          <div class="premium-card-desc">Simule les performances historiques d'un portefeuille sur 1, 3 ou 6 mois avant d'investir.</div>
-          <div class="premium-free">Gratuit : données actuelles uniquement</div>
-        </div>
-        <div class="premium-card">
-          <div class="premium-card-icon">♾️</div>
-          <div class="premium-card-title">Accès Illimité</div>
-          <div class="premium-card-desc">Recommandations journalières illimitées, watchlist étendue jusqu'à 20 cryptos, coups de cœur sans limite.</div>
-          <div class="premium-free">Gratuit : 5 reco/jour, watchlist ×3</div>
-        </div>
-        <div class="premium-card">
-          <div class="premium-card-icon">🔮</div>
-          <div class="premium-card-title">Signaux & Prévisions IA</div>
-          <div class="premium-card-desc">Signaux d'achat et de vente générés par IA sur la base des tendances techniques et des données on-chain.</div>
-          <div class="premium-free">Gratuit : scores statiques uniquement</div>
-        </div>
-        <div class="premium-card">
-          <div class="premium-card-icon">🎯</div>
-          <div class="premium-card-title">Mode Expert</div>
-          <div class="premium-card-desc">Données avancées on-chain, liquidations, flux institutionnels. Pour ceux qui veulent aller plus loin.</div>
-          <div class="premium-free">Gratuit : données de base</div>
-        </div>
-        <div class="premium-card">
-          <div class="premium-card-icon">💼</div>
-          <div class="premium-card-title">Multi-portefeuilles</div>
-          <div class="premium-card-desc">Gérer jusqu'à 5 portefeuilles distincts — trading, DCA long terme, staking, etc.</div>
-          <div class="premium-free">Gratuit : 1 portefeuille</div>
-        </div>
-        <div class="premium-card">
-          <div class="premium-card-icon">📥</div>
-          <div class="premium-card-title">Export CSV</div>
-          <div class="premium-card-desc">Télécharge tes transactions et P&L en CSV. Prêt pour ta déclaration fiscale ou ton comptable.</div>
-          <div class="premium-free">Gratuit : consultation uniquement</div>
-        </div>
-        <div class="premium-card">
-          <div class="premium-card-icon">🔗</div>
-          <div class="premium-card-title">Alertes On-chain</div>
-          <div class="premium-card-desc">Suis les gros mouvements de baleines, les transferts massifs et les nouveaux wallets actifs en temps réel.</div>
-          <div class="premium-free">Gratuit : alertes prix uniquement</div>
-        </div>
-        <div class="premium-card">
-          <div class="premium-card-icon">🎓</div>
-          <div class="premium-card-title">Quiz & Certifications</div>
-          <div class="premium-card-desc">Valide tes connaissances après chaque leçon et obtiens un badge de certification partageable.</div>
-          <div class="premium-free">Gratuit : contenu lecture seule</div>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:40px">
-        <a href="#appstore" class="btn-premium">✦ Je veux le Premium</a>
-        <p style="color:rgba(255,215,0,0.4);font-size:12px;margin-top:12px">Bientôt disponible · Rejoins la liste d'attente via l'app</p>
       </div>
     </div>
   </section>
@@ -830,7 +839,7 @@
     <p style="color:var(--t3);font-size:12px;margin-top:12px;">iOS 16+ requis · iPhone uniquement</p>
   </section>
 
-  <!-- ── FOOTER ── -->
+  <!-- ── FOOTER ── */
   <footer>
     <div class="footer-inner">
       <div class="nav-logo" style="justify-content:center;">
@@ -840,8 +849,8 @@
       <div class="footer-links">
         <a href="index.html">Accueil</a>
         <a href="#features">Fonctionnalités</a>
+        <a href="#comparateur">Comparateur</a>
         <a href="#apprendre">Apprendre</a>
-        <a href="#premium">Premium</a>
         <a href="support.html">Support</a>
         <a href="privacy.html">Confidentialité</a>
       </div>
