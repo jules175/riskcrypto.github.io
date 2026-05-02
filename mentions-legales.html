@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mentions légales de RiskCrypto" />
+  <title>RiskCrypto — Mentions légales</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #07090F;
+      --card:   #0F1220;
+      --border: rgba(255,255,255,0.08);
+      --t1:     #FFFFFF;
+      --t2:     rgba(255,255,255,0.65);
+      --t3:     rgba(255,255,255,0.35);
+      --teal:   #00E8C6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--t2);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(7,9,15,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .nav-icon { width: 34px; height: 34px; border-radius: 10px; background: rgba(0,232,198,0.15); border: 1.5px solid rgba(0,232,198,0.3); display: flex; align-items: center; justify-content: center; font-size: 17px; }
+    .nav-name { font-size: 17px; font-weight: 800; color: var(--t1); letter-spacing: -0.3px; }
+    .nav-back { color: var(--t3); text-decoration: none; font-size: 14px; font-weight: 600; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border); transition: color 0.15s; }
+    .nav-back:hover { color: var(--t1); }
+
+    header {
+      background: linear-gradient(180deg, rgba(0,232,198,0.05) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+
+    .header-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--teal);
+      background: rgba(0,232,198,0.08);
+      border: 1px solid rgba(0,232,198,0.2);
+      border-radius: 20px; padding: 4px 14px;
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      font-size: 28px; font-weight: 900; color: var(--t1);
+      letter-spacing: -0.5px; margin-bottom: 8px;
+    }
+
+    .header-sub { font-size: 14px; color: var(--t3); }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 16px; font-weight: 800; color: var(--t1);
+      margin-bottom: 14px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-label { color: var(--t3); flex-shrink: 0; }
+    .info-value { color: var(--t1); font-weight: 600; text-align: right; }
+
+    p { margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px; color: var(--t3);
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 32px 16px 24px; }
+      main { padding: 24px 16px 60px; }
+      section { padding: 20px; }
+      .info-row { flex-direction: column; gap: 2px; }
+      .info-value { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-icon">⚡</div>
+      <span class="nav-name">RiskCrypto</span>
+    </a>
+    <a href="index.html" class="nav-back">← Retour</a>
+  </nav>
+
+  <header>
+    <div class="header-tag">Légal</div>
+    <h1>Mentions légales</h1>
+    <p class="header-sub">Conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Éditeur de l'application</h2>
+      <div class="info-row">
+        <span class="info-label">Nom</span>
+        <span class="info-value">Jules Blot</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Statut</span>
+        <span class="info-value">Développeur indépendant</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Application</span>
+        <span class="info-value">RiskCrypto</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Plateforme</span>
+        <span class="info-value">iOS (App Store Apple)</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Contact</span>
+        <span class="info-value"><a href="mailto:riskcrypto.app@gmail.com">riskcrypto.app@gmail.com</a></span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Hébergement du site</h2>
+      <div class="info-row">
+        <span class="info-label">Hébergeur</span>
+        <span class="info-value">GitHub, Inc.</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Adresse</span>
+        <span class="info-value">88 Colin P Kelly Jr Street, San Francisco, CA 94107, États-Unis</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Site</span>
+        <span class="info-value"><a href="https://pages.github.com" target="_blank" rel="noopener">pages.github.com</a></span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Distribution de l'application</h2>
+      <div class="info-row">
+        <span class="info-label">Plateforme</span>
+        <span class="info-value">Apple App Store</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Éditeur App Store</span>
+        <span class="info-value">Apple Inc., One Apple Park Way, Cupertino, CA 95014, États-Unis</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Propriété intellectuelle</h2>
+      <p>L'ensemble du contenu de l'application et du site RiskCrypto (textes, scores, algorithmes, visuels, logo, marque) est la propriété exclusive de Jules Blot et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.</p>
+      <p>Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments de l'application, quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable de l'éditeur.</p>
+    </section>
+
+    <section>
+      <h2>Données personnelles</h2>
+      <p>RiskCrypto ne collecte aucune donnée personnelle identifiable. Toutes les préférences sont stockées localement sur l'appareil de l'utilisateur.</p>
+      <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit : <a href="mailto:riskcrypto.app@gmail.com">riskcrypto.app@gmail.com</a></p>
+      <p>Pour plus d'informations, consultez notre <a href="privacy.html">Politique de confidentialité</a>.</p>
+    </section>
+
+    <section>
+      <h2>Avertissement financier</h2>
+      <p>Les informations et scores fournis par RiskCrypto sont à titre informatif et éducatif uniquement. Ils ne constituent pas un conseil en investissement au sens de la réglementation financière française (AMF). Investir dans les cryptomonnaies comporte des risques importants de perte en capital.</p>
+    </section>
+
+    <section>
+      <h2>Cookies et traceurs</h2>
+      <p>Le site RiskCrypto n'utilise aucun cookie de suivi ni outil d'analyse tiers. Aucune donnée de navigation n'est collectée.</p>
+    </section>
+
+    <section>
+      <h2>Droit applicable et juridiction</h2>
+      <p>Les présentes mentions légales sont soumises au droit français. Tout litige relatif à l'utilisation de l'application ou du site sera porté devant les juridictions françaises compétentes.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 RiskCrypto — <a href="index.html">Accueil</a> · <a href="privacy.html">Confidentialité</a> · <a href="cgu.html">CGU</a> · <a href="support.html">Support</a>
+  </footer>
+
+</body>
+</html>
